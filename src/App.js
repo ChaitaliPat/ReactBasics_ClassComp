@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import Age from './Age'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  state={age:5}
+  
+  incHandler=()=>{
+    this.setState({
+      ...this.state,
+      age:this.state.age+1
+    })
+  }
+
+  decHandler=()=>{
+    this.setState({
+      ...this.state,
+      age:this.state.age>0?this.state.age-1:0
+    })
+  }
+
+  render(){
+    return(
+      <div className="App">
+        <h1>Welcome</h1>
+        <Age age={this.state.age}/>
+        <div style={{display:"flex",justifyContent:'space-around',alignItems:'center'}}>
+          <button onClick={this.incHandler}>INCREMENT</button>
+          <button onClick={this.decHandler}>DECREMENT</button>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default App;
