@@ -25,8 +25,8 @@ class App extends React.Component{
         <h1>Welcome</h1>
         <Age age={this.state.age}/>
         <div style={{display:"flex",justifyContent:'space-around',alignItems:'center'}}>
-          <button onClick={this.incHandler}>INCREMENT</button>
-          <button onClick={this.decHandler}>DECREMENT</button>
+          <button onClick={this.incHandler}>INCREMENT*</button>
+          <button onClick={this.decHandler}>DECREMENT*</button>
         </div>
       </div>
     )
